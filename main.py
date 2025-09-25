@@ -20,10 +20,12 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        dt = clock.tick(60) / 1000  # Amount of seconds between each loop.
         screen.fill("#11111e")
+
+        player.update(dt)
         player.draw(screen)
 
-        dt = clock.tick(60) / 1000  # Amount of seconds between each loop.
         # print(f"dt: {dt}")
         pygame.display.flip()
 
