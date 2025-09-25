@@ -6,6 +6,9 @@ def main():
     pygame.init()
     print("Starting Asteroids!")
 
+    clock = pygame.time.Clock()
+    dt = 0
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     while True:
@@ -15,6 +18,8 @@ def main():
 
         screen.fill("black")
 
+        dt = clock.tick(60) / 1000  # Amount of seconds between each loop.
+        # print(f"dt: {dt}")
         pygame.display.flip()
 
 
