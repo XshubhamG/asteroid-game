@@ -1,8 +1,9 @@
 import pygame
-from player import Player
+
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from player import Player
 
 
 def main():
@@ -32,6 +33,11 @@ def main():
                 return
 
         updateable.update(dt)
+
+        for obj in asteroid:
+            if obj.check_collision(player):
+                print("Collision detected! Game Over.")
+                return
 
         screen.fill("#11111e")
 
